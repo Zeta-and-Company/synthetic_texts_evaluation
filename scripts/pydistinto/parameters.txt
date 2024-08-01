@@ -1,0 +1,14 @@
+corpus=D:\synthetic_experiments\data\corpus
+workdir=D:\synthetic_experiments
+language=French
+segmentlength=5000
+randomizing=no
+use_randomized_texts=no
+random_segment_size=50
+forms=lemmata
+pos=all
+contrast=random
+target_corpus=1
+comparison_corpus=2
+no_of_features=25
+measures=zeta_sd0,zeta_sd2,rrf_dr0,eta_sg0,welsh,ranksum,chi_square,LLR,tf_idf
