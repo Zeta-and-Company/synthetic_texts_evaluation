@@ -1,4 +1,4 @@
-#@author JuliaDudar
+
 
 import glob
 import os
