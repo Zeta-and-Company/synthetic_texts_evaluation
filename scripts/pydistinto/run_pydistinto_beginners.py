@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jul 18 23:34:41 2021
-adjusted for synthetic text analysis by JuliaDudar
+
 
 """
 print("pydistinto is running, this may take a few minutes...")
