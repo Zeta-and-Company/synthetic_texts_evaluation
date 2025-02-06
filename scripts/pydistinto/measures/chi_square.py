@@ -2,7 +2,7 @@
 """
 Created on Mon May 24 22:44:09 2021
 
-@author: KeliDu
+
 """
 import pandas as pd
 from scipy import stats
