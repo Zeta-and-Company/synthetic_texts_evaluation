@@ -2,7 +2,6 @@
 """
 Created on Fri Aug 19 15:11:25 2022
 
-@author: KeliDu
 """
 import numpy as np
 
