@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # file: prepare.py
-# author: #cf, JuliaDudar
 # version: 0.3.1
 #adjusted for synthetic text analysis by JuliaDudar
 
