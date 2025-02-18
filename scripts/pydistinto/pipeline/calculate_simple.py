@@ -2,8 +2,6 @@
 """
 Created on Mon Feb  1 17:38:38 2021
 
-@author: KeliDu
-adjusted for synthetic text analysis by JuliaDudar
 """
 # =================================
 # Import statements
