@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # file: prepare.py
 # version: 0.3.1
-#adjusted for synthetic text analysis by JuliaDudar
+
 
 
 """
