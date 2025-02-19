@@ -3,8 +3,6 @@
 # file: prepare.py
 # version: 0.3.1
 
-
-
 """
 The functions contained in this script prepare a set of plain text files for contrastive analysis. 
 """
