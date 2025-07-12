@@ -7,7 +7,7 @@ This repository provides the data and code for the following preprint: Julia Hav
 
 ## What you find in this repository 
 
-- The folder `corpus` contains the complete collection of 320 synthetic texts. The underlying full text novels are not available here, due to copyright restrictions. Therefore, the script `1_synthetic_texts_generation.py` cannot be run. 
+- The folder `corpus` contains the complete collection of 320 synthetic texts (with word form, lemma and pos, but consisting of tokens sampled randomly from the entire base corpus). The underlying full text novels are not available here, due to copyright restrictions. Therefore, the script `1_synthetic_texts_generation.py` cannot be run. However, a metadata table is available, showing the composition of the underlying corpus. 
 - The folder `results` contains a number of tables documenting the rank of the target word in each run. This represents the raw results of the analysis. 
 - The folder `scripts` contains, wait for it, all the Python scripts used for this work, including a copy of the pydistinto code used here. 
 - The folder `visuals` contains the figures as they can also be found in the paper. These figures are all produced by the script `4_make-2x2-plots.py`. 
