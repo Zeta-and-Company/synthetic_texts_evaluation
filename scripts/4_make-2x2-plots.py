@@ -16,8 +16,8 @@ import re
 
 ## Select group of results 
 #group = "frequency"
-group = "dispersion_1000s-1f"
-##group = "dispersion_1s-1000f"
+##group = "dispersion_1000s-1f"
+group = "dispersion_1s-1000f"
 
 # Don't change
 groupindex = re.split("_", group)[0]
@@ -25,20 +25,20 @@ groupindex = re.split("_", group)[0]
 ## Select plot file name 
 #plotfilename = "2x2-plot_frequency-A.png"
 #plotfilename = "2x2-plot_frequency-B.png"
-#plotfilename = "2x2-plot_dispersion-A.png"
-plotfilename = "2x2-plot_dispersion-B.png"
+plotfilename = "2x2-plot_dispersion-A.png"
+#plotfilename = "2x2-plot_dispersion-B.png"
 
 
 # Define the result files and corresponding rank columns; select 4 per plot! 
 result_files = {
-    #"chi_square": [join("results", group, "chi_square.csv"), "chi_square_rank"],
-    #"LLR": [join("results", group, "LLR.csv"), "LLR_rank"],
-    #"RRF": [join("results", group, "RRF.csv"), "RRF_rank"],
-    #"tf_idf": [join("results", group, "tf_idf.csv"), "TF-IDF_rank"],
-    "zeta": [join("results", group, "zeta_0.csv"), "zeta_rank"],
-    "eta": [join("results", group, "eta.csv"), "eta_rank"],
-    "ranksum": [join("results", group, "ranksum.csv"), "ranksum_rank"],
-    "Welch": [join("results", group, "welch.csv"), "Welch_rank"],
+    "chi_square": [join("results", group, "chi_square.csv"), "chi_square_rank"],
+    "LLR": [join("results", group, "LLR.csv"), "LLR_rank"],
+    "RRF": [join("results", group, "RRF.csv"), "RRF_rank"],
+    "tf_idf": [join("results", group, "tf_idf.csv"), "TF-IDF_rank"],
+    #"zeta_log": [join("results", group, "zeta_2.csv"), "zeta_log_rank"],
+    #"eta": [join("results", group, "eta.csv"), "eta_rank"],
+    #"ranksum": [join("results", group, "ranksum.csv"), "ranksum_rank"],
+    #"Welch": [join("results", group, "welch.csv"), "Welch_rank"],
 }
 
 # === Functions === 
@@ -53,14 +53,14 @@ def process_file(filepath, rank_column, original_rank_col):
 
 # Read and process all files with specific original rank column names
 dfs = {
-    #"chi_square": process_file(result_files["chi_square"][0], result_files["chi_square"][1], 'chi_square_rang'),
-    #"LLR": process_file(result_files["LLR"][0], result_files["LLR"][1], 'LLR_rang'),
-    #"RRF": process_file(result_files["RRF"][0], result_files["RRF"][1], 'rrf_dr0_rang'),
-    #"tf_idf": process_file(result_files["tf_idf"][0], result_files["tf_idf"][1], 'tf_idf_rang'),
-    "zeta": process_file(result_files["zeta"][0], result_files["zeta"][1], 'zeta_sd0_rang'),
-    "eta": process_file(result_files["eta"][0], result_files["eta"][1], 'eta_sg0_rang'),
-    "ranksum": process_file(result_files["ranksum"][0], result_files["ranksum"][1], 'ranksum_rang'),
-    "Welch": process_file(result_files["Welch"][0], result_files["Welch"][1], 'welch_rang'),
+    "chi_square": process_file(result_files["chi_square"][0], result_files["chi_square"][1], 'chi_square_rang'),
+    "LLR": process_file(result_files["LLR"][0], result_files["LLR"][1], 'LLR_rang'),
+    "RRF": process_file(result_files["RRF"][0], result_files["RRF"][1], 'rrf_dr0_rang'),
+    "tf_idf": process_file(result_files["tf_idf"][0], result_files["tf_idf"][1], 'tf_idf_rang'),
+    #"zeta_log": process_file(result_files["zeta_log"][0], result_files["zeta_log"][1], 'zeta_sd2_rang'),
+    #"eta": process_file(result_files["eta"][0], result_files["eta"][1], 'eta_sg0_rang'),
+    #"ranksum": process_file(result_files["ranksum"][0], result_files["ranksum"][1], 'ranksum_rang'),
+    #"Welch": process_file(result_files["Welch"][0], result_files["Welch"][1], 'welch_rang'),
 }
 
 # Set up the plot
@@ -69,14 +69,14 @@ fig, axes = plt.subplots(2, 2, figsize=(9, 9), dpi=300)
 
 # Plot each data set
 plot_params = [
-    #(dfs['chi_square'], 'chi_square_rank', axes[0, 0]),
-    #(dfs['LLR'], 'LLR_rank', axes[0, 1]),
-    #(dfs['RRF'], 'RRF_rank', axes[1, 0]),
-    #(dfs['tf_idf'], 'TF-IDF_rank', axes[1, 1])
-    (dfs['zeta'], 'zeta_rank', axes[0, 0]),
-    (dfs['eta'], 'eta_rank', axes[0, 1]),
-    (dfs['ranksum'], 'ranksum_rank', axes[1, 0]),
-    (dfs['Welch'], 'Welch_rank', axes[1, 1])
+    (dfs['chi_square'], 'chi_square_rank', axes[0, 0]),
+    (dfs['LLR'], 'LLR_rank', axes[0, 1]),
+    (dfs['RRF'], 'RRF_rank', axes[1, 0]),
+    (dfs['tf_idf'], 'TF-IDF_rank', axes[1, 1])
+    #(dfs['zeta_log'], 'zeta_log_rank', axes[0, 0]),
+    #(dfs['eta'], 'eta_rank', axes[0, 1]),
+    #(dfs['ranksum'], 'ranksum_rank', axes[1, 0]),
+    #(dfs['Welch'], 'Welch_rank', axes[1, 1])
 ]
 
 for df, rank_col, ax in plot_params:
