@@ -1,4 +1,7 @@
-
+"""
+Script to generate individual plots for each measure, here for the frequency data. 
+(This script is deprecated, the 2x2-plot-script has updated parameters.)
+"""
 
 import glob
 import os
