@@ -23,10 +23,10 @@ group = "dispersion_1s-1000f"
 groupindex = re.split("_", group)[0]
 
 ## Select plot file name 
-#plotfilename = "fig-2_frequency_groupA.png"
-#plotfilename = "fig-3_frequency_groupB.png"
-#plotfilename = "fig-4_dispersion_groupA.png"
-plotfilename = "fig-5_dispersion_groupB.png"
+#plotfilename = "fig-2_frequency_groupB.png"
+#plotfilename = "fig-3_frequency_groupA.png"
+#plotfilename = "fig-4_dispersion_groupB.png"
+plotfilename = "fig-5_dispersion_groupA.png"
 
 
 # Define the result files and corresponding rank columns; select 4 per plot! 
@@ -64,7 +64,7 @@ dfs = {
 }
 
 # Set up the plot
-mypalette = sns.light_palette("lime", as_cmap=False, n_colors=11)
+#mypalette = sns.light_palette("lime", as_cmap=False, n_colors=11)
 fig, axes = plt.subplots(2, 2, figsize=(9, 9), dpi=300)
 
 # Plot each data set
@@ -92,7 +92,13 @@ for df, rank_col, ax in plot_params:
         data=df, 
         hue=groupindex, 
         legend=False, 
-        palette=mypalette, 
+        palette=["lightblue"],
+        boxprops=dict(edgecolor="blue"),
+        whiskerprops=dict(color="blue"),
+        capprops=dict(color="blue"),
+        medianprops=dict(color="blue", linewidth=2),
+        flierprops=dict(marker='o', markerfacecolor='none', markeredgecolor='blue'),
+        #palette=mypalette, 
         ax=ax,        
         )
     
